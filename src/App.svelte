@@ -1,30 +1,57 @@
 <script>
-	export let name;
+	import { writable } from 'svelte/store';
+
+	import Top from './components/Top.svelte';
+	import Main from './components/Main.svelte'
+	import Write from './components/Write.svelte'
+
+	export let clientWidth = `${window.innerWidth}px`;
+	export let clientHeight = `${window.innerHeight}px`;
+
+	const isWrite = writable(false)
+	const todos = writable([])
+
+	isWrite.subscribe(v => console.log('Change isWrite', v))
+	todos.subscribe(v => console.log('Todo List', v))
+
+	window.addEventListener('resize', () => {
+		clientWidth = `${window.innerWidth}px`;
+		clientHeight = `${window.innerHeight}px`;
+	})
+	
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<main style="--clientWidth:{clientWidth}; --clientHeight:{clientHeight};">
+	<div class="wrap">
+		<Top isWrite={isWrite}/>
+		<Main todos={todos} />
+		<Write isWrite={isWrite} todos={todos}/>
+	</div>
+
 </main>
 
 <style>
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+		margin: 0;
+		padding: 0;
+		width: var(--clientWidth);
+		height: var(--clientHeight);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.wrap {
+		position: relative;
+		max-width: 414px;
+        min-width: 414px;
+		height: 100%;
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
 	}
 </style>

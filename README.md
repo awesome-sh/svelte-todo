@@ -1,20 +1,13 @@
 # Svelte
 
-This directory is a brief example of a [Svelte](https://svelte.dev/) site that can be deployed to Vercel with zero-configuration. If you need to use API Routes, we recommend using our [SvelteKit example](https://github.com/vercel/vercel/tree/main/examples/sveltekit).
+Svelte Study
 
-## Deploy Your Own
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/svelte&template=svelte)
+## Study
 
-_Live Example: https://svelte.vercel.app_
-
-## Getting Started
-
-```bash
-npx degit sveltejs/template my-svelte-project
-cd my-svelte-project
-npm install
-npm run dev
-```
-
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+    - Layout : 리액트와 비교
+    - Dynamic CSS Props : 동적 CSS Props 처리해보기
+    - State Management : Native Store (Svelte 내장 Store 기능사용해보기)
+    - 성능체크 (번들링 사이즈가 리액트보다 작다는 건 검증이 된 사항이기 때문에 그외에 사항들 직접 체크해보기)
+    - 현재 서비스들을 Svelte로 마이그레이션 했을때 발생할 것 같은 문제 찾아보기
+    - 라이브러리 생태계 체크

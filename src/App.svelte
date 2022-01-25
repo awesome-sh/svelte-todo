@@ -1,5 +1,6 @@
 <script>
 	import { writable } from 'svelte/store';
+	import { isWrite, todos } from './stores/store'
 
 	import Top from './components/Top.svelte';
 	import Main from './components/Main.svelte'
@@ -7,9 +8,6 @@
 
 	export let clientWidth = `${window.innerWidth}px`;
 	export let clientHeight = `${window.innerHeight}px`;
-
-	const isWrite = writable(false)
-	const todos = writable([])
 
 	isWrite.subscribe(v => console.log('Change isWrite', v))
 	todos.subscribe(v => console.log('Todo List', v))
@@ -23,9 +21,18 @@
 
 <main style="--clientWidth:{clientWidth}; --clientHeight:{clientHeight};">
 	<div class="wrap">
-		<Top isWrite={isWrite}/>
-		<Main todos={todos} />
-		<Write isWrite={isWrite} todos={todos}/>
+		<Top 
+			isWrite={isWrite}
+		/>
+
+		<Main 
+			todos={todos} 
+		/>
+
+		<Write 
+			isWrite={isWrite}
+			todos={todos}
+		/>
 	</div>
 
 </main>

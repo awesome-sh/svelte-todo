@@ -14,9 +14,7 @@
     }
 
     const handleWrite = () => {
-        console.log("todoValue", todo)
         todos.update(v => {
-            console.log('todos length', v.length)
             const pushItem = {
                 id: v.length + 1,
                 todo

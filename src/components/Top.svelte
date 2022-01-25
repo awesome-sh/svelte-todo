@@ -1,6 +1,5 @@
 <script>
     export let isWrite;
-    console.log('>> Toggle Write', isWrite)
 
     const handleToggleWrite = () => {
         isWrite.update(state => !state)

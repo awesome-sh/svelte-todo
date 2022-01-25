@@ -1,7 +1,6 @@
 # Svelte
-
+![Preview](https://user-images.githubusercontent.com/46561976/150918618-6bcfbc1f-58b3-456c-b64a-b83a07b072a6.png)
 Svelte Study
-
 
 ## Study
 

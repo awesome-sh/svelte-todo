@@ -1,7 +1,7 @@
 # Svelte
 
-Svelte Study
-
+Svelte Study Demo
+> https://svelte-todo-indol.vercel.app
 
 ## Study
 
